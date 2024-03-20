@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link href="{{url_for('static',filename='cdn/css/bootstrap.min.css')}}" rel="stylesheet" >
+  <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"> 
+  <link rel="stylesheet" href="{{url_for('static',filename='css/mycss.css')}}">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/loader.css')}}"> 
+   <style>
+    .dropdown-menu[data-bs-popper] {
+      left: auto;
+      right: 0;
+    }
+   </style>
+</head>
+<body>
+    <nav class="navbar" style="background-color: mediumpurple;text-align: center;" id="navheader">
+      <div class="container-fluid px-3">
+        <span class="navbar-brand mb-0 d-flex align-items-center gap-2"> 
+          <svg class="logoimg" viewBox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 64 64">
+            <path
+              d="M62 38V26l-6.16-1.54a24.813 24.813 0 0 0-1.655-3.98l3.27-5.45-8.485-8.485-5.45 3.27a24.813 24.813 0 0 0-3.98-1.655L38 2H26l-1.54 6.16a24.813 24.813 0 0 0-3.98 1.655l-5.45-3.27-8.485 8.485 3.27 5.45a24.813 24.813 0 0 0-1.655 3.98L2 26v12l6.16 1.54a24.813 24.813 0 0 0 1.655 3.98l-3.27 5.45 8.485 8.485 5.45-3.27a24.813 24.813 0 0 0 3.98 1.655L26 62h12l1.54-6.16a24.813 24.813 0 0 0 3.98-1.655l5.45 3.27 8.485-8.485-3.27-5.45a24.813 24.813 0 0 0 1.655-3.98L62 38zM32 53c-11.598 0-21-9.402-21-21s9.402-21 21-21 21 9.402 21 21-9.402 21-21 21z"
+              fill="#ffcb57" class="fill-ffcb57"></path>
+            <path
+              d="M38.781 63H25.219l-1.595-6.382c-1.05-.358-2.09-.79-3.104-1.291l-5.646 3.388-9.037-9.037 1.414-1.414 7.934 7.934 5.26-3.157.497.259a23.764 23.764 0 0 0 3.819 1.587l.533.169L26.781 61h10.438l1.487-5.945.533-.169a23.764 23.764 0 0 0 3.819-1.587l.497-.259 5.26 3.157 7.382-7.382-3.157-5.26.259-.497a23.892 23.892 0 0 0 1.588-3.819l.168-.534L61 37.219V26.781l-5.945-1.487-.169-.533a23.764 23.764 0 0 0-1.587-3.819l1.773-.924a25.967 25.967 0 0 1 1.546 3.606L63 25.219v13.562l-6.382 1.595a25.882 25.882 0 0 1-1.291 3.104l3.388 5.646-9.589 9.589-5.646-3.388a25.854 25.854 0 0 1-3.104 1.291L38.781 63zM8.928 43.982a26.106 26.106 0 0 1-1.546-3.606L1 38.781V25.219l6.382-1.595c.358-1.05.79-2.09 1.291-3.104l-3.388-5.646 9.589-9.589 5.646 3.388a25.854 25.854 0 0 1 3.104-1.291L25.219 1h13.562l1.595 6.382c1.05.358 2.09.79 3.104 1.291l5.646-3.388 9.037 9.037-1.414 1.414-7.934-7.934-5.26 3.157-.497-.259a23.764 23.764 0 0 0-3.819-1.587l-.533-.169L37.219 3H26.781l-1.487 5.945-.533.169c-1.295.408-2.58.942-3.819 1.587l-.497.259-5.26-3.157-7.382 7.382 3.157 5.26-.259.497a23.764 23.764 0 0 0-1.587 3.819l-.169.533L3 26.781v10.438l5.945 1.486.168.534c.41 1.297.944 2.582 1.588 3.819l-1.773.924z"
+              fill="#ffffff" class="fill-3f3a34"></path>
+            <path
+              d="M32 54c-12.131 0-22-9.869-22-22s9.869-22 22-22 22 9.869 22 22-9.869 22-22 22zm0-42c-11.028 0-20 8.972-20 20s8.972 20 20 20 20-8.972 20-20-8.972-20-20-20zM31 5h2v2h-2z"
+              fill="#ffffff" class="fill-3f3a34"></path>
+            <path transform="rotate(-45.001 13.615 13.615)" d="M12.615 12.615h2v2h-2z" fill="#ffffff" class="fill-3f3a34"></path>
+            <path d="M5 31h2v2H5z" fill="#ffffff" class="fill-3f3a34"></path>
+            <path transform="rotate(-45.001 13.615 50.385)" d="M12.615 49.385h2v2h-2z" fill="#ffffff" class="fill-3f3a34"></path>
+            <path d="M31 57h2v2h-2z" fill="#ffffff" class="fill-3f3a34"></path>
+            <path transform="rotate(-45.001 50.384 50.386)" d="M49.385 49.385h2v2h-2z" fill="#ffffff" class="fill-3f3a34"></path>
+            <path d="M57 31h2v2h-2z" fill="#ffffff" class="fill-3f3a34"></path>
+            <path transform="rotate(-45.001 50.385 13.616)" d="M49.385 12.615h2v2h-2z" fill="#ffffff" class="fill-3f3a34"></path>
+            <path d="M38 38H26V26h12v12zm-10-2h8v-8h-8v8z" fill="#ffffff" class="fill-3f3a34"></path>
+            <path
+              d="M42 22h-5v-3h-2v3h-2v-3h-2v3h-2v-3h-2v3h-5v5h-3v2h3v2h-3v2h3v2h-3v2h3v5h5v3h2v-3h2v3h2v-3h2v3h2v-3h5v-5h3v-2h-3v-2h3v-2h-3v-2h3v-2h-3v-5zm-2 18H24V24h16v16zM27 15h2v2h-2zM31 15h2v2h-2zM35 15h2v2h-2zM15 35h2v2h-2zM15 31h2v2h-2zM15 27h2v2h-2zM35 47h2v2h-2zM31 47h2v2h-2zM27 47h2v2h-2zM47 27h2v2h-2zM47 31h2v2h-2zM47 35h2v2h-2z"
+              fill="#e56565" class="fill-e56565"></path>
+          </svg>
+          <h3 class="d-inline mb-0 text-white">Automation AI</h3>
+        </span>
+        <div class="profile">
+       
+        <div class="dropdown">
+          <div class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img class="userimg" src="{{url_for('static',filename='images/user.png')}}" alt="" srcset="">
+          </div>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item"  >Welcome </a></li>
+            <li><a class="dropdown-item"  >Logout</a></li>
+          </ul>
+        </div>
+        </div>
+      </div>
+      
+    </nav>
+   </div>
+    <div class="row mx-0">
+        <div class="col mx-auto" id="showmsg">
+
+        </div>
+    </div>
+   <div class="row mx-0 my-3">
+      <div class="col-lg-3" style="">
+        <div class="card" style="margin-bottom:15px !important;">
+          <div class="card-body">
+            <div class="icon-contain">
+              <div class="row">
+                <div class="col-2 align-self-center">
+                  <!-- <i class="bi bi-file-earmark" style="font-size: xx-large;color: purple;"></i> -->
+                  <svg style="font-size: xx-large;color: purple;" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-file-earmark" viewBox="0 0 16 16">
+                    <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5z"/>
+                  </svg>
+                </div>
+                <div class="col-10 text-end">
+                  <h5 class="mt-0 mb-1" id="wday">144</h5>
+                  <p class="mb-0 font-12 text-mute">Total Files</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card" style="margin-bottom:15px !important;">
+          <div class="card-body">
+            <div class="icon-contain">
+              <div class="row">
+                <div class="col-2 align-self-center">
+                  <!-- <i class="bi bi-file-earmark-check" style="font-size: xx-large;color: green;"></i> -->
+                  <svg style="font-size: xx-large;color: green;" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-file-earmark-check" viewBox="0 0 16 16">
+                    <path d="M10.854 7.854a.5.5 0 0 0-.708-.708L7.5 9.793 6.354 8.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                    <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
+                  </svg>
+                </div>
+                <div class="col-10 text-end">
+                  <h5 class="mt-0 mb-1" id="whfCount">2</h5>
+                  <p class="mb-0 font-12 text-mute">Total Processed</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card" style="margin-bottom:15px !important;">
+          <div class="card-body">
+            <div class="icon-contain">
+              <div class="row">
+                <div class="col-2 align-self-center">
+                  <!-- <i class="bi bi-file-earmark-excel" style="font-size: xx-large;color: orangered;"></i> -->
+                  <svg style="font-size: xx-large;color: orangered;" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-file-earmark-excel" viewBox="0 0 16 16">
+                    <path d="M5.884 6.68a.5.5 0 1 0-.768.64L7.349 10l-2.233 2.68a.5.5 0 0 0 .768.64L8 10.781l2.116 2.54a.5.5 0 0 0 .768-.641L8.651 10l2.233-2.68a.5.5 0 0 0-.768-.64L8 9.219l-2.116-2.54z"/>
+                    <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
+                  </svg>
+                </div>
+                <div class="col-10 text-end">
+                  <h5 class="mt-0 mb-1" id="leaveCount">1</h5>
+                  <p class="mb-0 font-12 text-mute">Unprocessed File</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card " style="margin-bottom:15px !important;">
+          <div class="card-body">
+            <div class="icon-contain">
+              <div class="row">
+                <div class="col-2 align-self-center">
+                  <!-- <i class="bi bi-file-earmark-diff" style="font-size: xx-large;color: darkslateblue;"></i> -->
+                  <svg style="font-size: xx-large;color: darkslateblue;" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-file-earmark-diff" viewBox="0 0 16 16">
+                    <path d="M8 5a.5.5 0 0 1 .5.5V7H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V8H6a.5.5 0 0 1 0-1h1.5V5.5A.5.5 0 0 1 8 5m-2.5 6.5A.5.5 0 0 1 6 11h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5"/>
+                    <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
+                  </svg>
+                </div>
+                <div class="col-10 text-end">
+                  <h5 class="mt-0 mb-1" id="expense">₹0</h5>
+                  <p class="mb-0 font-12 text-mute">Pending Files</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  <div class="row mx-0 ">
+    <div class="col-12 col-lg-6">
+      <div class="card">
+        <div class="card-header">
+          Upload Po Data Copies
+        </div>
+        <div class="card-body wrapper" id="fitbox1">
+          <form id="submitform" >
+            <div class="formdiv" id="drop-area">
+              <input class="file-input" type="file" name="files" hidden multiple>
+              <!-- <i class="fas fa-cloud-upload-alt"></i> -->
+              <svg xmlns="http://www.w3.org/2000/svg" height="50" width="62"
+                viewBox="0 0 640 512">
+                <path fill="#6990f2"
+                  d="M537.6 226.6c4.1-10.7 6.4-22.4 6.4-34.6 0-53-43-96-96-96-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32c-88.4 0-160 71.6-160 160 0 2.7 .1 5.4 .2 8.1C40.2 219.8 0 273.2 0 336c0 79.5 64.5 144 144 144h368c70.7 0 128-57.3 128-128 0-61.9-44-113.6-102.4-125.4zM393.4 288H328v112c0 8.8-7.2 16-16 16h-48c-8.8 0-16-7.2-16-16V288h-65.4c-14.3 0-21.4-17.2-11.3-27.3l105.4-105.4c6.2-6.2 16.4-6.2 22.6 0l105.4 105.4c10.1 10.1 2.9 27.3-11.3 27.3z" />
+              </svg>
+              <span>Drag and Drop files</span>
+              <center class="margin-y">or</center>
+              <span class="mybtn1 bg-blue" id="selectfile" >Select Files</span>
+            </div>
+          </form>
+          <section class="uploaded-area">
+            <ul class="showupload mb-0">
+            </ul> 
+          </section>
+        </div>
+        <div class="card-footer">
+        <div class="d-flex justify-content-evenly" style="margin-top: 10px; margin-bottom: 10px;">
+          <button class="mybtn1 btn  btn-secondary" type="submit" id="viewuploaded">View</button>
+          <button class="mybtn1 btn btn-primary d-flex flex-row justify-content-around align-items-center" type="submit" id="submitupload">Upload Files
+                  <span class="loader" id="myloader" style="display:none;"></span>
+          </button>
+        </div>  
+      </div>
+      </div>
+    </div>
+    <div class="col-12 mt-3 mt-lg-0 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+              Add Additional files
+            </div>
+            <div class="card-body wrapper">
+              <form id="" >
+                <div class="mb-3">
+                  <label  class="form-label">C4MB Data</label>
+                  <div class="input-group">
+                    <input type="file" class="form-control" id="c4mbdata" aria-label="Upload" accept=".xlsx" >
+                    <button class="btn btn-outline-secondary" type="button" id="c4mbdata_uploadbtn" >Upload</button>
+                    <button type="button" class="btn btn-primary input-group-text" id="c4mbdata_view" style="display:none;">
+                      <a class="viewbtns" href="" target="_blank">View</a>
+                    </button>
+                  </div> 
+                  <div class="text-mute text-end mt-1"><span class="c4mbdata_ctime"></span></div>         
+                </div>
+              
+                <div class="mb-3">
+                  <label for="formGroupExampleInput2" class="form-label">Revenue Report</label>
+                  <div class="input-group">
+                    <input type="file" class="form-control" id="Revenuereport" aria-label="Upload" accept=".xlsx"> 
+                    <button class="btn btn-outline-secondary" type="button" id="Revenuereport_uploadbtn">Upload</button>
+                    <button type="button" class="btn btn-primary input-group-text" id="Revenuereport_view" style="display:none;">
+                      <a class="viewbtns" href="" target="_blank">View</a>
+                    </button>
+                  </div>
+                  <div class="text-mute text-end mt-1"> <span class="Revenuereport_ctime"></span></div>
+                </div>
+              </form>
+            </div>
+            <div class="card-footer">
+              <div class="d-flex justify-content-evenly" style="margin-top: 10px; margin-bottom: 10px;">
+                <button type="button" class="btn mybtn1 btn-danger">Clear</button>
+                <button type="button" class="btn  mybtn1 btn-success">Download</button>
+                <button type="button" class="btn mybtn1 btn-warning">Run Process</button>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+   
+  <div class="container-fluid px-0">
+    <footer class="text-center py-2 my-4 border-top bg-white">
+      <div class="col-md-12  text-center">
+        <span class="mb-3 mb-md-0 text-body-secondary">© 2024 Company, Inc</span>
+      </div>
+    </footer>
+  </div>
+
+ 
+  <script src="{{url_for('static',filename='cdn/js/popper.min.js')}}" ></script>
+  <script src="{{url_for('static',filename='cdn/js/bootstrap.min.js')}}"></script>
+  <script src="{{url_for('static',filename='cdn/js/jquery.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/script.js')}}"></script>
+
+</body>
+</html>
